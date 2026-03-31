@@ -22,7 +22,7 @@ export default function Nav() {
         Papa<span style={{ color: "var(--terracotta)" }}>Dev</span>
       </Link>
 
-      <ul className="flex gap-8 list-none m-0 p-0">
+      <ul className="flex list-none m-0 p-0" style={{ gap: "2rem" }}>
         {[
           { href: "/articles", label: "Articles" },
           { href: "/jeux", label: "Jeux éducatifs" },

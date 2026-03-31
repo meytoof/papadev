@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="grid min-h-screen pt-20" style={{ gridTemplateColumns: "1fr 1fr" }}>
+      <section className="grid pt-20" style={{ gridTemplateColumns: "1fr 1fr", minHeight: "100svh" }}>
         {/* Left */}
         <div className="flex flex-col justify-center px-20 py-24">
           <p className="font-mono-dm text-xs tracking-widest uppercase mb-6" style={{ color: "var(--terracotta)" }}>
@@ -58,18 +58,18 @@ export default function Home() {
           </div>
         </div>
         {/* Right */}
-        <div className="relative flex items-center justify-center overflow-hidden p-16" style={{ background: "var(--foret)" }}>
+        <div className="relative flex items-center justify-center overflow-hidden p-16" style={{ background: "var(--foret)", minHeight: "100svh" }}>
           <div className="absolute w-[500px] h-[500px] rounded-full" style={{ top: -100, right: -100, background: "rgba(255,255,255,0.04)" }} />
           <div className="absolute w-[300px] h-[300px] rounded-full" style={{ bottom: 50, left: 50, background: "rgba(255,255,255,0.04)" }} />
           <div className="relative z-10 rounded-3xl p-12 text-center max-w-sm w-full" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}>
-            <span className="text-6xl block mb-6">🎲</span>
+            <span className="block mb-6" style={{ fontSize: "4rem" }}>🎲</span>
             <h3 className="font-display text-2xl mb-4" style={{ color: "var(--cream)", lineHeight: 1.2 }}>
               Apprendre en jouant, vraiment.
             </h3>
             <p style={{ color: "rgba(245,240,232,0.7)", fontSize: "0.95rem", lineHeight: 1.65, fontWeight: 300 }}>
               Des mini-jeux conçus par un papa-dev pour transformer les révisions en plaisir.
             </p>
-            <div className="flex flex-wrap gap-2 justify-center mt-6">
+            <div className="flex flex-wrap justify-center mt-6" style={{ gap: "0.5rem" }}>
               {["Maths", "Lecture", "Mémoire", "Logique"].map(t => (
                 <span key={t} className="rounded-full px-3 py-1 font-mono-dm text-xs" style={{ background: "rgba(193,80,46,0.25)", color: "var(--terracotta-light)" }}>{t}</span>
               ))}
@@ -80,7 +80,7 @@ export default function Home() {
 
       {/* ── CONCEPT ── */}
       <section id="concept" className="grid gap-24 items-center px-20 py-32" style={{ gridTemplateColumns: "1fr 1fr" }}>
-        <div>
+        <div className="min-w-0">
           <p className="font-mono-dm text-xs tracking-widest uppercase mb-5" style={{ color: "var(--sable)" }}>Le concept</p>
           <h2 className="font-display mb-6" style={{ fontSize: "clamp(2rem,3.5vw,3.2rem)", lineHeight: 1.15, letterSpacing: "-0.025em" }}>
             Un papa épicurieux,<br />c&apos;est quoi <em style={{ color: "var(--terracotta)" }}>exactement</em>&nbsp;?
@@ -102,7 +102,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-4 rounded-3xl p-12" style={{ background: "var(--cream-dark)", position: "relative", overflow: "hidden" }}>
+        <div className="min-w-0 flex flex-col gap-4 rounded-3xl p-12" style={{ background: "var(--cream-dark)", position: "relative", overflow: "hidden" }}>
           {PILLARS.map(({ icon, title, desc }) => (
             <div key={title} className="flex items-center gap-4 rounded-2xl p-5 transition-transform hover:translate-x-1.5" style={{ background: "var(--blanc)", border: "1px solid var(--sable-light)" }}>
               <span className="text-3xl flex-shrink-0">{icon}</span>
@@ -132,7 +132,7 @@ export default function Home() {
             { icon: "🍕", bg: "linear-gradient(135deg,#1A1A18,#2A2A28)", tag: "Épicurisme", title: "Cuisiner avec ses enfants : la vraie leçon de maths", desc: "Les fractions, les proportions, et le plaisir de faire ensemble.", featured: false },
           ].map(({ icon, bg, tag, title, desc, featured }) => (
             <Link key={title} href="/articles" className="rounded-3xl overflow-hidden no-underline flex flex-col transition-transform hover:-translate-y-1" style={{ background: "var(--encre-soft)", border: "1px solid rgba(255,255,255,0.06)", color: "inherit", ...(featured ? { gridRow: "1 / 3" } : {}) }}>
-              <div className="flex items-center justify-center" style={{ background: bg, fontSize: featured ? "5rem" : "3rem", aspectRatio: featured ? "auto" : "16/9", flex: featured ? 1 : "none", minHeight: featured ? 200 : "auto" }}>
+              <div className="flex items-center justify-center" style={{ background: bg, fontSize: featured ? "5rem" : "3rem", flex: "none", height: featured ? 280 : "auto", aspectRatio: featured ? "auto" : "16/9" }}>
                 {icon}
               </div>
               <div className="p-6">

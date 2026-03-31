@@ -10,7 +10,7 @@ export default function MaieutiqueBanner() {
         <circle cx="600" cy="300" r="180" fill="rgba(193,80,46,0.05)" />
       </svg>
 
-      <div className="relative z-10 grid gap-16 items-center p-16" style={{ gridTemplateColumns: "1fr auto" }}>
+      <div className="relative z-10 grid items-center p-16" style={{ gridTemplateColumns: "1fr 260px", gap: "3rem" }}>
         {/* Left */}
         <div>
           <p className="font-mono-dm text-xs tracking-widest uppercase mb-4" style={{ color: "rgba(245,240,232,0.4)" }}>
