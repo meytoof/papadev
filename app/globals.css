@@ -1,26 +1,32 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --terracotta: #C1502E;
+  --terracotta-light: #E07050;
+  --cream: #F5F0E8;
+  --cream-dark: #EDE6D6;
+  --foret: #2D4A3E;
+  --foret-light: #3D6B5A;
+  --sable: #B8A88A;
+  --sable-light: #D4C5A9;
+  --encre: #1A1A18;
+  --encre-soft: #3A3830;
+  --blanc: #FAFAF7;
+  --vert-mai: #7ABFA0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  color: var(--encre);
+  overflow-x: hidden;
 }
+
+.font-display { font-family: 'Playfair Display', serif; }
+.font-mono-dm { font-family: 'DM Mono', monospace; }
